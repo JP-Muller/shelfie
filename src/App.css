@@ -1,33 +1,100 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.main-content {
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#display-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #D34735;
+  width: 500px;
+  height: 350px;
+  margin: 25px;
+  border-radius: 13px;
+}
+#display-box img{
+  width: 275px;
+  height: 275px;
+  border-radius: 5px;
+  margin-left: 10px;
+  border: thick black;
+}
+
+#product-details{
+margin-left: 15px;
+display: flex;
+flex-direction: column;
+align-content: center;
+}
+#name{
+/* margin: 25px;
+margin-bottom: 50px; */
+text-shadow: #3AD886;
+}
+#price{
+/* margin-left: 50px; */
+text-shadow: #3AD886;
+}
+#product-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  margin-top: auto;
+}
+
+#navbar{
+  display: flex;
+  align-items: center;
+  color: white;
+  background: #AB2A19;
+  height: 10vh;
+  width: 100vw;
+}
+#nav-header{
+  margin-left: 15px;
+}
+#form-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: #3AD886;
+  margin-top: 100px;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+}
+
+#form-container img{
+  height: 77px;
+  width: 170px;
+}
+
+#form-add-btn{
+color: white;
+background: #D34735;
+border-radius: 7px;
+height: 27px;
+width: 125px;
+margin-left: 10px;
+margin-top: 10px;
+}
+
+#form-cancel-btn{
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+background: #D34735;
+border-radius: 7px;
+height: 27px;
+width: 70px;
+margin-right: 10px;
 }
