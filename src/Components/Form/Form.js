@@ -2,20 +2,28 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 export class Form extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state ={
-            image: 'https://getuikit.com/v2/docs/images/placeholder_600x400.svg',
+        this.state = {
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-cy2XllAnyu7iP-SecyE0cafs6VP5ulqQcle6VKAqz-jcEytK',
             name: '',
             price: 0,
 
         }
     }
+    componentDidUpdate() {
+
+    }
+
+    updateProduct = () => {
+
+    }
+
     addProduct = () => {
-    let {name, price, image} = this.state
-    axios.post('http://localhost:4200/api/product', {'name': name, 'price': price, 'image': image})
-    .then(() => this.props.getInventory() )
-    .catch(() => console.log(`Couldn't add product...`))
+        let { name, price, image } = this.state
+        axios.post('http://localhost:4200/api/product', { 'name': name, 'price': price, 'image': image })
+            .then(() => this.props.getInventory())
+            .catch(() => console.log(`Couldn't add product...`))
     }
 
     handleImage = (image) => {
@@ -46,25 +54,28 @@ export class Form extends Component {
     }
 
     render() {
+        const { currentProductId } = this.props
         return (
             <div id='form-container'>
                 <div id='form-img'>
-                    <img src={this.state.image} alt='Preview Imagery'/>
+                    <img src={this.state.image} alt='Preview Imagery' />
                 </div>
-               <form action='' id='form-inputs'>
-                   <p>Image URL:</p>
-                   <input type='text' onChange={ (e) => this.handleImage(e.target.value)} />
-                   <p>Product Name:</p>
-                   <input type='text' onChange={ (e) => this.handleName(e.target.value)} />
-                   <p>Price:</p>
-                   <input type='number' step='0.01' onChange={ (e) => this.handlePrice(e.target.value)} />
-                   <div id='form-btns'>
-                       <button id='form-cancel-btn' onClick={ () => this.handleCancel()}>Cancel</button>
-                       {
-                       <button id='form-add-btn' onClick={() => this.addProduct()}>Add to Inventory</button>
-                       }
-                   </div>
-                </form> 
+                <form action='' id='form-inputs'>
+                    <p>Image URL:</p>
+                    <input type='text' onChange={(e) => this.handleImage(e.target.value)} />
+                    <p>Product Name:</p>
+                    <input type='text' onChange={(e) => this.handleName(e.target.value)} />
+                    <p>Price:</p>
+                    <input type='number' step='0.01' onChange={(e) => this.handlePrice(e.target.value)} />
+                    <div id='form-btns'>
+                        <button id='form-cancel-btn' onClick={() => this.handleCancel()}>Cancel</button>
+                        {currentProductId ?
+                            <button id='form-save-btn'>Save Changes</button>
+                            :
+                            <button id='form-add-btn' onClick={() => this.addProduct()}>Add to Inventory</button>
+                        }
+                    </div>
+                </form>
             </div>
         )
     }

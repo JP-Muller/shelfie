@@ -2,21 +2,22 @@ import React, { Component } from 'react'
 
 export class Product extends Component {
     render() {
-        let {inventory, deleteProduct} = this.props
+        let { inventory, deleteProduct, updateCurrentProductId } = this.props
 
         let inventoryDisplay = inventory.map((product, i) => {
             return (
-                <div key={i}id='display-box'>
+                <div key={i} id='display-box'>
                     <div>
-                        <img src={product.image} alt='Product Imagery'/>
+                        <img src={product.image} alt='Product Imagery' />
                     </div>
                     <div id='product-details'>
-                            <p id='name'>{product.name}</p>
-                            <p id='price'>${product.price}</p>
+                        <p id='name'><b>{product.name}</b></p>
+
+                        <p id='price'>$<i>{product.price}</i></p>
                     </div>
                     <div id='product-btns'>
-                        <button>Edit</button>
-                        <button onClick={() => deleteProduct(product.id)}>Delete</button>
+                        <button id='product-edit-btn' onClick={() => updateCurrentProductId(product.id)}>Edit</button>
+                        <button id='product-delete-btn' onClick={() => deleteProduct(product.id)}>Delete</button>
                     </div>
                 </div>
             )

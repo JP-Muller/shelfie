@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Russo+One&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Russo One", sans-serif;
 }
 
 .main-content {
@@ -14,87 +20,139 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #D34735;
+  background: #d34735;
   width: 500px;
   height: 350px;
   margin: 25px;
   border-radius: 13px;
+  border-style: solid;
+  border-width: 2px;
 }
-#display-box img{
+#display-box img {
   width: 275px;
   height: 275px;
   border-radius: 5px;
-  margin-left: 10px;
-  border: thick black;
+  margin-left: 20px;
+  border-style: dotted;
+  border-width: 1.5px;
 }
 
-#product-details{
-margin-left: 15px;
-display: flex;
-flex-direction: column;
-align-content: center;
-}
-#name{
-/* margin: 25px;
-margin-bottom: 50px; */
-text-shadow: #3AD886;
-}
-#price{
-/* margin-left: 50px; */
-text-shadow: #3AD886;
-}
-#product-btns{
+#product-details {
+  margin-left: 15px;
   display: flex;
-  justify-content: space-between;
-  align-items: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#name {
+  text-shadow: #3ad886;
+}
+#price {
+  margin-top: 25px;
+  text-shadow: #3ad886;
+}
+#product-btns {
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
   margin-top: auto;
 }
-
-#navbar{
+#product-delete-btn {
+  background: #3ad886;
+  color: white;
+  border-radius: 7px;
+  height: 27px;
+  width: 55px;
+}
+#product-edit-btn {
+  background: #3ad886;
+  color: white;
+  border-radius: 7px;
+  height: 27px;
+  width: 55px;
+}
+#navbar {
   display: flex;
   align-items: center;
   color: white;
-  background: #AB2A19;
+  background: #ab2a19;
   height: 10vh;
   width: 100vw;
 }
-#nav-header{
+#nav-header {
   margin-left: 15px;
 }
-#form-container{
+#header-dash-btn {
+  margin-left: 37px;
+  background: #ed6b5a;
+  color: white;
+  border-radius: 7px;
+  height: 27px;
+  width: 100px;
+}
+#header-add-btn {
+  margin-left: 10px;
+  background: #ed6b5a;
+  color: white;
+  border-radius: 7px;
+  height: 27px;
+  width: 100px;
+}
+#form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #3AD886;
+  background: #3ad886;
   margin-top: 100px;
+  margin-right: 175px;
   height: 250px;
   width: 250px;
   border-radius: 10px;
   position: sticky;
-  top: 0;
+  top: 1rem;
+  border-style: solid;
+  border-width: 2px;
 }
 
-#form-container img{
+#form-container img {
+  border-radius: 7px;
   height: 77px;
   width: 170px;
 }
 
-#form-add-btn{
-color: white;
-background: #D34735;
-border-radius: 7px;
-height: 27px;
-width: 125px;
-margin-left: 10px;
-margin-top: 10px;
+#form-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#form-cancel-btn{
+#form-add-btn {
   color: white;
-background: #D34735;
-border-radius: 7px;
-height: 27px;
-width: 70px;
-margin-right: 10px;
+  background: #d34735;
+  border-radius: 7px;
+  height: 27px;
+  width: 125px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+#form-cancel-btn {
+  color: white;
+  background: #d34735;
+  border-radius: 7px;
+  height: 27px;
+  width: 70px;
+  margin-right: 5px;
+}
+
+#form-save-btn {
+  color: white;
+  background: #d34735;
+  border-radius: 7px;
+  height: 27px;
+  width: 125px;
+  margin-left: 10px;
+  margin-top: 5px;
 }

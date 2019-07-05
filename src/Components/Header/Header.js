@@ -5,8 +5,10 @@ export class Header extends Component {
         return (
             <div id='navbar'>
                 <header id='nav-header'>
-                <h1>SHELFIE</h1>
+                    <h1>SHELFIE</h1>
                 </header>
+                <button id='header-dash-btn'>Dashboard</button>
+                <button id='header-add-btn'>Add Product</button>
             </div>
         )
     }
